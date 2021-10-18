@@ -1,0 +1,99 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="namespaceFormalLangPractice1task13" kind="namespace" language="Python">
+    <compoundname>FormalLangPractice1task13</compoundname>
+    <innernamespace refid="namespaceFormalLangPractice1task13_1_1dump">FormalLangPractice1task13::dump</innernamespace>
+    <innernamespace refid="namespaceFormalLangPractice1task13_1_1nfa">FormalLangPractice1task13::nfa</innernamespace>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="namespaceFormalLangPractice1task13_1aa4a022e6ddacd362b83964da5cc5d044" prot="private" static="no" mutable="no">
+        <type>list</type>
+        <definition>list __all__</definition>
+        <argsstring></argsstring>
+        <name>__all__</name>
+        <initializer>=  [&apos;nfa&apos;, &apos;<ref refid="namespaceFormalLangPractice1task13_1a98803c3026e9b391bfb50f8b984deff7" kindref="member">solve</ref>&apos;, &apos;dump&apos;]</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="__init__.py" line="12" column="1" bodyfile="__init__.py" bodystart="12" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespaceFormalLangPractice1task13_1a629d61dfe4da763164a4d1a2d85b0afd" prot="private" static="no" mutable="no">
+        <type>string</type>
+        <definition>string __author__</definition>
+        <argsstring></argsstring>
+        <name>__author__</name>
+        <initializer>=  &quot;Krotov Andrey &lt;krotov.ai@phystech.edu&gt;&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="__init__.py" line="13" column="1" bodyfile="__init__.py" bodystart="13" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespaceFormalLangPractice1task13_1a341e85b13b806a2dd007d32b6c92aa18" prot="private" static="no" mutable="no">
+        <type>string</type>
+        <definition>string __date__</definition>
+        <argsstring></argsstring>
+        <name>__date__</name>
+        <initializer>=  &quot;18 October 2021&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="__init__.py" line="15" column="1" bodyfile="__init__.py" bodystart="15" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespaceFormalLangPractice1task13_1a4ab58d4bcf214e227cb35538617e6add" prot="private" static="no" mutable="no">
+        <type>string</type>
+        <definition>string __version__</definition>
+        <argsstring></argsstring>
+        <name>__version__</name>
+        <initializer>=  &quot;0.1&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="__init__.py" line="14" column="1" bodyfile="__init__.py" bodystart="14" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="namespaceFormalLangPractice1task13_1a98803c3026e9b391bfb50f8b984deff7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def FormalLangPractice1task13.solve</definition>
+        <argsstring>(istream=sys.stdin, ostream=sys.stdout)</argsstring>
+        <name>solve</name>
+        <param>
+          <type>istream</type>
+          <defname>istream</defname>
+          <defval>sys.stdin</defval>
+        </param>
+        <param>
+          <type>ostream</type>
+          <defname>ostream</defname>
+          <defval>sys.stdout</defval>
+        </param>
+        <briefdescription>
+<para>Solution for the task Корректность: воспользуемся тем, что любая регулярка задаёт НКА. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>А значит если подслово может быть прочитано НКА, то оно принадлежит установленному языку. Более точно, переберем все подстроки данной нам строки и попытаемся их прочитать, длина наибольшей прочитанной строки будет ответом. Верность построения НКА доказывается самим алгоритмом построения. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="__init__.py" line="24" column="1" bodyfile="__init__.py" bodystart="24" bodyend="94"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Python Library to solve homework: &apos;Formal Languages, Practice 1, task 13&apos;. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="__init__.py" line="1" column="1"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,36 @@
+\hypertarget{namespaceFormalLangPractice1task13}{}\doxysection{Formal\+Lang\+Practice1task13 Namespace Reference}
+\label{namespaceFormalLangPractice1task13}\index{FormalLangPractice1task13@{FormalLangPractice1task13}}
+
+
+Python Library to solve homework\+: \textquotesingle{}Formal Languages, Practice 1, task 13\textquotesingle{}.  
+
+
+\doxysubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+ \mbox{\hyperlink{namespaceFormalLangPractice1task13_1_1dump}{dump}}
+\item 
+ \mbox{\hyperlink{namespaceFormalLangPractice1task13_1_1nfa}{nfa}}
+\begin{DoxyCompactList}\small\item\em Python Library to solve homework\+: \textquotesingle{}Formal Languages, Practice 1, task 13\textquotesingle{}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \mbox{\hyperlink{namespaceFormalLangPractice1task13_a98803c3026e9b391bfb50f8b984deff7}{solve}} (istream=sys.\+stdin, ostream=sys.\+stdout)
+\begin{DoxyCompactList}\small\item\em Solution for the task Корректность\+: воспользуемся тем, что любая регулярка задаёт НКА. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Python Library to solve homework\+: \textquotesingle{}Formal Languages, Practice 1, task 13\textquotesingle{}. 
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{namespaceFormalLangPractice1task13_a98803c3026e9b391bfb50f8b984deff7}\label{namespaceFormalLangPractice1task13_a98803c3026e9b391bfb50f8b984deff7}} 
+\index{FormalLangPractice1task13@{FormalLangPractice1task13}!solve@{solve}}
+\index{solve@{solve}!FormalLangPractice1task13@{FormalLangPractice1task13}}
+\doxysubsubsection{\texorpdfstring{solve()}{solve()}}
+{\footnotesize\ttfamily def Formal\+Lang\+Practice1task13.\+solve (\begin{DoxyParamCaption}\item[{}]{istream = {\ttfamily sys.stdin},  }\item[{}]{ostream = {\ttfamily sys.stdout} }\end{DoxyParamCaption})}
+
+
+
+Solution for the task Корректность\+: воспользуемся тем, что любая регулярка задаёт НКА. 
+
+А значит если подслово может быть прочитано НКА, то оно принадлежит установленному языку. Более точно, переберем все подстроки данной нам строки и попытаемся их прочитать, длина наибольшей прочитанной строки будет ответом. Верность построения НКА доказывается самим алгоритмом построения. 
