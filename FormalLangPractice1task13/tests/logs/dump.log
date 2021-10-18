@@ -1,0 +1,47 @@
+Dumping started...
+Dumping NFA...
+||******************************************************************************||
+	NFA id: 140227389917936, initial: q110, final: q111
+	Count of Nodes: 8
+
+	Dumping Node id: q110, is final: False, Count of transitions: 2
+		by: eps to: 
+			Node id: q112, is final: False
+		by: eps to: 
+			Node id: q113, is final: False
+		It's all transitions...
+
+	Dumping Node id: q114, is final: False, Count of transitions: 1
+		by: eps to: 
+			Node id: q115, is final: False
+		It's all transitions...
+
+	Dumping Node id: q112, is final: False, Count of transitions: 1
+		by: a to: 
+			Node id: q116, is final: False
+		It's all transitions...
+
+	Dumping Node id: q116, is final: False, Count of transitions: 1
+		by: eps to: 
+			Node id: q114, is final: False
+		It's all transitions...
+
+	Dumping Node id: q113, is final: False, Count of transitions: 1
+		by: b to: 
+			Node id: q117, is final: False
+		It's all transitions...
+
+	Dumping Node id: q117, is final: False, Count of transitions: 1
+		by: eps to: 
+			Node id: q114, is final: False
+		It's all transitions...
+
+	Dumping Node id: q115, is final: False, Count of transitions: 1
+		by: c to: 
+			Node id: q111, is final: True
+		It's all transitions...
+
+	Dumping Node id: q111, is final: True, Count of transitions: 0
+		It's all transitions...
+||******************************************************************************||
+
