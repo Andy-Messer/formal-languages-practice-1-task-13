@@ -1,3 +1,3 @@
-from FormalLangPractice1task13 import solve
+from practice1 import solve
 
 solve()

@@ -1,0 +1,282 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="namespacepractice1_1_1dump" kind="namespace" language="Python">
+    <compoundname>practice1::dump</compoundname>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="namespacepractice1_1_1dump_1aab918c44be8d33ac19b291d5c1ad200c" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>dot</definition>
+        <argsstring></argsstring>
+        <name>dot</name>
+        <initializer>=  graphviz.Digraph(format=&apos;png&apos;, comment=&apos;dump of <ref refid="classpractice1_1_1nfa_1_1NFA" kindref="compound">NFA</ref>&apos;)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dump.py" line="30" column="1" bodyfile="dump.py" bodystart="30" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacepractice1_1_1dump_1a8f26f8bca83d574708416da576b98249" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>dump_file</definition>
+        <argsstring></argsstring>
+        <name>dump_file</name>
+        <initializer>=  None</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dump.py" line="33" column="1" bodyfile="dump.py" bodystart="33" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacepractice1_1_1dump_1aa19be6305a5a4485e1e70de70ed7d677" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>states</definition>
+        <argsstring></argsstring>
+        <name>states</name>
+        <initializer>=  dict()</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dump.py" line="36" column="1" bodyfile="dump.py" bodystart="36" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="namespacepractice1_1_1dump_1ad9f715f29da831aa7643c91af5ebe458" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def practice1.dump.__dump__</definition>
+        <argsstring>(nfa, filename)</argsstring>
+        <name>__dump__</name>
+        <param>
+          <type>nfa</type>
+          <defname>nfa</defname>
+        </param>
+        <param>
+          <type>filename</type>
+          <defname>filename</defname>
+        </param>
+        <briefdescription>
+<para>Dump the information about NFA. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>nfa</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>NFA </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>filename</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>output file </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dump.py" line="138" column="1" bodyfile="dump.py" bodystart="138" bodyend="196"/>
+        <references refid="namespacepractice1_1_1dump_1ab26a8f699adf1b51bbb17f5d6b0f5286" compoundref="dump_8py" startline="99" endline="124">practice1.dump.__print__</references>
+      </memberdef>
+      <memberdef kind="function" id="namespacepractice1_1_1dump_1a48a26379315f5034651c9f7bb9bb4fe5" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def practice1.dump.__get_transitions_count</definition>
+        <argsstring>(node)</argsstring>
+        <name>__get_transitions_count</name>
+        <param>
+          <type>node</type>
+          <defname>node</defname>
+        </param>
+        <briefdescription>
+<para>Counts the number of possible transitions. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>node</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>node that number of transitions is being searched for </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>count: number of transitions </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dump.py" line="63" column="1" bodyfile="dump.py" bodystart="63" bodyend="76"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacepractice1_1_1dump_1ab26a8f699adf1b51bbb17f5d6b0f5286" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def practice1.dump.__print__</definition>
+        <argsstring>(nfa)</argsstring>
+        <name>__print__</name>
+        <param>
+          <type>nfa</type>
+          <defname>nfa</defname>
+        </param>
+        <briefdescription>
+<para>Dump NFA. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Make notes about nodes and their connections <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>nfa</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>nondeterministic finite automaton that need to be print </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dump.py" line="99" column="1" bodyfile="dump.py" bodystart="99" bodyend="124"/>
+        <references refid="namespacepractice1_1_1dump_1ade4c74aabe15dae245a2b47484ca9612" compoundref="dump_8py" startline="77" endline="98">practice1.dump.__print_node__</references>
+        <references refid="namespacepractice1_1_1dump_1a8d3277da1b00286352f693cdb9c011a0" compoundref="dump_8py" startline="39" endline="52">practice1.dump.make_new_state</references>
+        <referencedby refid="namespacepractice1_1_1dump_1ad9f715f29da831aa7643c91af5ebe458" compoundref="dump_8py" startline="138" endline="196">practice1.dump.__dump__</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="namespacepractice1_1_1dump_1ae6922a078c8fb18193cfe597b9590312" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def practice1.dump.__print_brief__</definition>
+        <argsstring>(node)</argsstring>
+        <name>__print_brief__</name>
+        <param>
+          <type>node</type>
+          <defname>node</defname>
+        </param>
+        <briefdescription>
+<para>Print a summary of the NFA node. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Short output format: &apos;node.name node.final&apos; <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>node</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>node the debugrmation about which should be output </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dump.py" line="53" column="1" bodyfile="dump.py" bodystart="53" bodyend="62"/>
+        <references refid="namespacepractice1_1_1dump_1a8d3277da1b00286352f693cdb9c011a0" compoundref="dump_8py" startline="39" endline="52">practice1.dump.make_new_state</references>
+        <referencedby refid="namespacepractice1_1_1dump_1ade4c74aabe15dae245a2b47484ca9612" compoundref="dump_8py" startline="77" endline="98">practice1.dump.__print_node__</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="namespacepractice1_1_1dump_1ade4c74aabe15dae245a2b47484ca9612" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def practice1.dump.__print_node__</definition>
+        <argsstring>(node)</argsstring>
+        <name>__print_node__</name>
+        <param>
+          <type>node</type>
+          <defname>node</defname>
+        </param>
+        <briefdescription>
+<para>Printing node of NFA. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Output the name of the node, its final and a list of neighbors with their number <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>node</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>printing node </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dump.py" line="77" column="1" bodyfile="dump.py" bodystart="77" bodyend="98"/>
+        <references refid="namespacepractice1_1_1dump_1ae6922a078c8fb18193cfe597b9590312" compoundref="dump_8py" startline="53" endline="62">practice1.dump.__print_brief__</references>
+        <references refid="namespacepractice1_1_1dump_1a8d3277da1b00286352f693cdb9c011a0" compoundref="dump_8py" startline="39" endline="52">practice1.dump.make_new_state</references>
+        <referencedby refid="namespacepractice1_1_1dump_1ab26a8f699adf1b51bbb17f5d6b0f5286" compoundref="dump_8py" startline="99" endline="124">practice1.dump.__print__</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="namespacepractice1_1_1dump_1a99dcf84e0b8fa8cb8f8c888ffc8f198f" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def practice1.dump._tree_remove</definition>
+        <argsstring>(str top)</argsstring>
+        <name>_tree_remove</name>
+        <param>
+          <type>str</type>
+          <declname>top</declname>
+        </param>
+        <briefdescription>
+<para>Removes all files in the current directory. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>top</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Name of initial directory. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dump.py" line="125" column="1" bodyfile="dump.py" bodystart="125" bodyend="137"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacepractice1_1_1dump_1a8d3277da1b00286352f693cdb9c011a0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>str</type>
+        <definition> str practice1.dump.make_new_state</definition>
+        <argsstring>(node)</argsstring>
+        <name>make_new_state</name>
+        <param>
+          <type>node</type>
+          <defname>node</defname>
+        </param>
+        <briefdescription>
+<para>Generate new name for id(node) in format: f&apos;q + {id}&apos;. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>node</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>node </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>name: new name of node </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dump.py" line="39" column="1" bodyfile="dump.py" bodystart="39" bodyend="52"/>
+        <referencedby refid="namespacepractice1_1_1dump_1ab26a8f699adf1b51bbb17f5d6b0f5286" compoundref="dump_8py" startline="99" endline="124">practice1.dump.__print__</referencedby>
+        <referencedby refid="namespacepractice1_1_1dump_1ae6922a078c8fb18193cfe597b9590312" compoundref="dump_8py" startline="53" endline="62">practice1.dump.__print_brief__</referencedby>
+        <referencedby refid="namespacepractice1_1_1dump_1ade4c74aabe15dae245a2b47484ca9612" compoundref="dump_8py" startline="77" endline="98">practice1.dump.__print_node__</referencedby>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>module - Dump utility of NFA. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="dump.py" line="1" column="1"/>
+  </compounddef>
+</doxygen>

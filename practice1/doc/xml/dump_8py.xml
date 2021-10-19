@@ -1,0 +1,214 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="dump_8py" kind="file" language="Python">
+    <compoundname>dump.py</compoundname>
+    <innernamespace refid="namespacepractice1_1_1dump">practice1::dump</innernamespace>
+    <briefdescription>
+<para>auxiliary module for uploading debugrmation about NFA </para>
+    </briefdescription>
+    <detaileddescription>
+<sect1 id="index_1description_main">
+<title>Description</title>
+<para>Collects a textual description of the state of the automaton in &apos;/logs&apos; and takes snapshots of the state of the machine, puts them to &apos;/snapshots&apos;</para>
+</sect1>
+<sect1 id="nfa_8py_1libraries_main">
+<title>Libraries/Modules</title>
+<para><itemizedlist>
+<listitem><para>graphviz - module for visualisation</para>
+</listitem><listitem><para>os - module for communication with the system</para>
+</listitem><listitem><para>logging - module for logging</para>
+</listitem></itemizedlist>
+</para>
+</sect1>
+<sect1 id="dump_8py_1author">
+<title>Author(s)</title>
+<para><itemizedlist>
+<listitem><para>Created by Andrey Krotov on 17/10/2021</para>
+</listitem><listitem><para>Modified by Andrey Krotov on 18/10/2021</para>
+</listitem></itemizedlist>
+</para>
+<para>Copyright (c) 2021 Andrey Krotov. All rights reserved. </para>
+</sect1>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1" refid="namespacepractice1_1_1dump" refkind="compound"><highlight class="stringliteral">&quot;&quot;&quot;!<sp/>@brief<sp/>module<sp/>-<sp/>Dump<sp/>utility<sp/>of<sp/>NFA.<sp/>&quot;&quot;&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight><highlight class="comment">#<sp/>Imports</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/>graphviz</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/>os</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/>logging</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight><highlight class="comment">#<sp/>New<sp/>digraph<sp/>for<sp/>NFA<sp/>visualization</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal">logging.debug(</highlight><highlight class="stringliteral">&apos;creating<sp/>digraph<sp/>variable...&apos;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="30" refid="namespacepractice1_1_1dump_1aab918c44be8d33ac19b291d5c1ad200c" refkind="member"><highlight class="normal">dot<sp/>=<sp/>graphviz.Digraph(format=</highlight><highlight class="stringliteral">&apos;png&apos;</highlight><highlight class="normal">,<sp/>comment=</highlight><highlight class="stringliteral">&apos;dump<sp/>of<sp/>NFA&apos;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight><highlight class="comment">#<sp/>File<sp/>where<sp/>NFA<sp/>will<sp/>be<sp/>dumped</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="33" refid="namespacepractice1_1_1dump_1a8f26f8bca83d574708416da576b98249" refkind="member"><highlight class="normal">dump_file<sp/>=<sp/></highlight><highlight class="keywordtype">None</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight><highlight class="comment">#<sp/>Dictionary<sp/>of<sp/>nodes<sp/>id<sp/>and<sp/>their<sp/>names.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="36" refid="namespacepractice1_1_1dump_1aa19be6305a5a4485e1e70de70ed7d677" refkind="member"><highlight class="normal">states<sp/>=<sp/>dict()</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight></codeline>
+<codeline lineno="39" refid="namespacepractice1_1_1dump_1a8d3277da1b00286352f693cdb9c011a0" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">def<sp/></highlight><highlight class="normal"><ref refid="namespacepractice1_1_1dump_1a8d3277da1b00286352f693cdb9c011a0" kindref="member">make_new_state</ref>(node)<sp/>-&gt;<sp/>str:</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;&quot;&quot;!<sp/>Generate<sp/>new<sp/>name<sp/>for<sp/>id(node)<sp/>in<sp/>format:<sp/>f&apos;q<sp/>+<sp/>{id}&apos;</highlight></codeline>
+<codeline lineno="41"><highlight class="stringliteral"><sp/><sp/><sp/><sp/>@param<sp/>node:<sp/>node</highlight></codeline>
+<codeline lineno="42"><highlight class="stringliteral"><sp/><sp/><sp/><sp/>@return<sp/>name:<sp/>new<sp/>name<sp/>of<sp/>node</highlight></codeline>
+<codeline lineno="43"><highlight class="stringliteral"><sp/><sp/><sp/><sp/>&quot;&quot;&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/>id_node<sp/>=<sp/>id(node)</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/>logging.debug(</highlight><highlight class="stringliteral">&apos;making<sp/>new<sp/>name<sp/>for<sp/>id<sp/>of<sp/>Node&apos;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>id_node<sp/></highlight><highlight class="keywordflow">not</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">in</highlight><highlight class="normal"><sp/>states:</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>states[id_node]<sp/>=<sp/></highlight><highlight class="stringliteral">&apos;q&apos;</highlight><highlight class="normal"><sp/>+<sp/>str(len(states))</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>logging.debug(f</highlight><highlight class="stringliteral">&apos;new<sp/>name<sp/>created!<sp/>{id_node}<sp/>-<sp/>{states[id_node]}&apos;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/>logging.debug(f</highlight><highlight class="stringliteral">&apos;Exiting,<sp/>return<sp/>value:<sp/>{states[id_node]}&apos;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>states[id_node]</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"></highlight></codeline>
+<codeline lineno="52"><highlight class="normal"></highlight></codeline>
+<codeline lineno="53" refid="namespacepractice1_1_1dump_1ae6922a078c8fb18193cfe597b9590312" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">def<sp/></highlight><highlight class="normal"><ref refid="namespacepractice1_1_1dump_1ae6922a078c8fb18193cfe597b9590312" kindref="member">__print_brief__</ref>(node):</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;&quot;&quot;!<sp/>Print<sp/>a<sp/>summary<sp/>of<sp/>the<sp/>NFA<sp/>node</highlight></codeline>
+<codeline lineno="55"><highlight class="stringliteral"></highlight></codeline>
+<codeline lineno="56"><highlight class="stringliteral"><sp/><sp/><sp/><sp/>Short<sp/>output<sp/>format:<sp/>&apos;node.name<sp/>node.final&apos;</highlight></codeline>
+<codeline lineno="57"><highlight class="stringliteral"><sp/><sp/><sp/><sp/>@param<sp/>node:<sp/>node<sp/>the<sp/>debugrmation<sp/>about<sp/>which<sp/>should<sp/>be<sp/>output</highlight></codeline>
+<codeline lineno="58"><highlight class="stringliteral"><sp/><sp/><sp/><sp/>&quot;&quot;&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/>logging.debug(f</highlight><highlight class="stringliteral">&apos;printing<sp/>brief<sp/>debugrmation<sp/>about<sp/>node<sp/>{id(node)}&apos;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/>dump_file.write(</highlight><highlight class="stringliteral">&quot;\t\t\tNode<sp/>id:<sp/>&quot;</highlight><highlight class="normal"><sp/>+<sp/><ref refid="namespacepractice1_1_1dump_1a8d3277da1b00286352f693cdb9c011a0" kindref="member">make_new_state</ref>(node)<sp/>+<sp/></highlight><highlight class="stringliteral">&quot;,<sp/>is<sp/>final:<sp/>&quot;</highlight><highlight class="normal"><sp/>+<sp/>str(node.final)<sp/>+<sp/></highlight><highlight class="stringliteral">&apos;\n&apos;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"></highlight></codeline>
+<codeline lineno="62"><highlight class="normal"></highlight></codeline>
+<codeline lineno="63"><highlight class="normal"></highlight><highlight class="keyword">def<sp/></highlight><highlight class="normal">__get_transitions_count(node):</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;&quot;&quot;!<sp/>Counts<sp/>the<sp/>number<sp/>of<sp/>possible<sp/>transitions</highlight></codeline>
+<codeline lineno="65"><highlight class="stringliteral"><sp/><sp/><sp/><sp/>@param<sp/>node:<sp/>node<sp/>that<sp/>number<sp/>of<sp/>transitions<sp/>is<sp/>being<sp/>searched<sp/>for</highlight></codeline>
+<codeline lineno="66"><highlight class="stringliteral"><sp/><sp/><sp/><sp/>@return<sp/>count:<sp/>number<sp/>of<sp/>transitions</highlight></codeline>
+<codeline lineno="67"><highlight class="stringliteral"><sp/><sp/><sp/><sp/>&quot;&quot;&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/>logging.debug(f</highlight><highlight class="stringliteral">&apos;Starting<sp/>count<sp/>transitions<sp/>{id(node)}&apos;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/>count<sp/>=<sp/>0</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>nodes<sp/></highlight><highlight class="keywordflow">in</highlight><highlight class="normal"><sp/>node.transitions:</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>count<sp/>+=<sp/>len(node.transitions[nodes])</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"></highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/>logging.debug(f</highlight><highlight class="stringliteral">&quot;Transitions<sp/>counted<sp/>(exiting),<sp/>returned<sp/>value:<sp/>{count}&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>count</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"></highlight></codeline>
+<codeline lineno="76"><highlight class="normal"></highlight></codeline>
+<codeline lineno="77" refid="namespacepractice1_1_1dump_1ade4c74aabe15dae245a2b47484ca9612" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">def<sp/></highlight><highlight class="normal"><ref refid="namespacepractice1_1_1dump_1ade4c74aabe15dae245a2b47484ca9612" kindref="member">__print_node__</ref>(node):</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;&quot;&quot;!<sp/>Printing<sp/>node<sp/>of<sp/>NFA</highlight></codeline>
+<codeline lineno="79"><highlight class="stringliteral"></highlight></codeline>
+<codeline lineno="80"><highlight class="stringliteral"><sp/><sp/><sp/><sp/>Output<sp/>the<sp/>name<sp/>of<sp/>the<sp/>node,<sp/>its<sp/>final<sp/>and<sp/>a<sp/>list<sp/>of<sp/>neighbors<sp/>with<sp/>their<sp/>number</highlight></codeline>
+<codeline lineno="81"><highlight class="stringliteral"><sp/><sp/><sp/><sp/>@param<sp/>node:<sp/>printing<sp/>node</highlight></codeline>
+<codeline lineno="82"><highlight class="stringliteral"><sp/><sp/><sp/><sp/>&quot;&quot;&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/>logging.debug(f</highlight><highlight class="stringliteral">&apos;dump<sp/>main<sp/>debugrmation<sp/>about<sp/>the<sp/>node<sp/>{id(node)}&apos;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/>dump_file.write(</highlight><highlight class="stringliteral">&quot;Node<sp/>id:<sp/>&quot;</highlight><highlight class="normal"><sp/>+<sp/><ref refid="namespacepractice1_1_1dump_1a8d3277da1b00286352f693cdb9c011a0" kindref="member">make_new_state</ref>(node)<sp/>+<sp/></highlight><highlight class="stringliteral">&quot;,<sp/>is<sp/>final:<sp/>&quot;</highlight><highlight class="normal"><sp/>+<sp/>str(node.final)<sp/>+<sp/></highlight><highlight class="stringliteral">&apos;,<sp/>&apos;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/>dump_file.write(</highlight><highlight class="stringliteral">&quot;Count<sp/>of<sp/>transitions:<sp/>&quot;</highlight><highlight class="normal"><sp/>+<sp/>str(__get_transitions_count(node))<sp/>+<sp/></highlight><highlight class="stringliteral">&apos;\n&apos;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"></highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/>logging.debug(</highlight><highlight class="stringliteral">&apos;dump<sp/>all<sp/>transitions<sp/>about<sp/>last<sp/>node&apos;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>__get_transitions_count(node)<sp/>&gt;<sp/>0:</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>key<sp/></highlight><highlight class="keywordflow">in</highlight><highlight class="normal"><sp/>node.transitions:</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>_node_<sp/></highlight><highlight class="keywordflow">in</highlight><highlight class="normal"><sp/>node.transitions[key]:</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>dump_file.write(</highlight><highlight class="stringliteral">&quot;\t\tby:<sp/>&quot;</highlight><highlight class="normal"><sp/>+<sp/>str(key)<sp/>+<sp/></highlight><highlight class="stringliteral">&quot;<sp/>to:<sp/>\n&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="92"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>dot.edge(<ref refid="namespacepractice1_1_1dump_1a8d3277da1b00286352f693cdb9c011a0" kindref="member">make_new_state</ref>(node),<sp/><ref refid="namespacepractice1_1_1dump_1a8d3277da1b00286352f693cdb9c011a0" kindref="member">make_new_state</ref>(_node_),<sp/>label=key)</highlight></codeline>
+<codeline lineno="93"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespacepractice1_1_1dump_1ae6922a078c8fb18193cfe597b9590312" kindref="member">__print_brief__</ref>(_node_)</highlight></codeline>
+<codeline lineno="94"><highlight class="normal"></highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/><sp/>dump_file.write(</highlight><highlight class="stringliteral">&quot;\t\tIt&apos;s<sp/>all<sp/>transitions...\n&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"><sp/><sp/><sp/><sp/>logging.debug(</highlight><highlight class="stringliteral">&apos;end<sp/>of<sp/>dump<sp/>last<sp/>node&apos;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="97"><highlight class="normal"></highlight></codeline>
+<codeline lineno="98"><highlight class="normal"></highlight></codeline>
+<codeline lineno="99" refid="namespacepractice1_1_1dump_1ab26a8f699adf1b51bbb17f5d6b0f5286" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">def<sp/></highlight><highlight class="normal"><ref refid="namespacepractice1_1_1dump_1ab26a8f699adf1b51bbb17f5d6b0f5286" kindref="member">__print__</ref>(nfa):</highlight></codeline>
+<codeline lineno="100"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;&quot;&quot;!<sp/>Dump<sp/>NFA</highlight></codeline>
+<codeline lineno="101"><highlight class="stringliteral"></highlight></codeline>
+<codeline lineno="102"><highlight class="stringliteral"><sp/><sp/><sp/><sp/>Make<sp/>notes<sp/>about<sp/>nodes<sp/>and<sp/>their<sp/>connections</highlight></codeline>
+<codeline lineno="103"><highlight class="stringliteral"><sp/><sp/><sp/><sp/>@param<sp/>nfa:<sp/>nondeterministic<sp/>finite<sp/>automaton<sp/>that<sp/>need<sp/>to<sp/>be<sp/>print</highlight></codeline>
+<codeline lineno="104"><highlight class="stringliteral"><sp/><sp/><sp/><sp/>&quot;&quot;&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="105"><highlight class="normal"><sp/><sp/><sp/><sp/>logging.debug(f</highlight><highlight class="stringliteral">&apos;Dump<sp/>main<sp/>debugrmation<sp/>about<sp/>NFA<sp/>{nfa}&apos;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="106"><highlight class="normal"><sp/><sp/><sp/><sp/>dump_file.write(</highlight><highlight class="stringliteral">&quot;||******************************************************************************||\n&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="107"><highlight class="normal"><sp/><sp/><sp/><sp/>dump_file.write(</highlight></codeline>
+<codeline lineno="108"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;\tNFA<sp/>id:<sp/>&quot;</highlight><highlight class="normal"><sp/>+<sp/>str(id(nfa))<sp/>+<sp/></highlight><highlight class="stringliteral">&quot;,<sp/>initial:<sp/>&quot;</highlight><highlight class="normal"><sp/>+<sp/><ref refid="namespacepractice1_1_1dump_1a8d3277da1b00286352f693cdb9c011a0" kindref="member">make_new_state</ref>(nfa.initial)<sp/>+<sp/></highlight><highlight class="stringliteral">&quot;,<sp/>final:<sp/>&quot;</highlight><highlight class="normal"><sp/>+<sp/><ref refid="namespacepractice1_1_1dump_1a8d3277da1b00286352f693cdb9c011a0" kindref="member">make_new_state</ref>(</highlight></codeline>
+<codeline lineno="109"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>nfa.final)<sp/>+<sp/></highlight><highlight class="stringliteral">&apos;\n&apos;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="110"><highlight class="normal"><sp/><sp/><sp/><sp/>dump_file.write(</highlight><highlight class="stringliteral">&quot;\tCount<sp/>of<sp/>Nodes:<sp/>&quot;</highlight><highlight class="normal"><sp/>+<sp/>str(len(nfa.nodes))<sp/>+<sp/></highlight><highlight class="stringliteral">&apos;\n&apos;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="111"><highlight class="normal"></highlight></codeline>
+<codeline lineno="112"><highlight class="normal"><sp/><sp/><sp/><sp/>logging.debug(f</highlight><highlight class="stringliteral">&apos;Dump<sp/>all<sp/>nodes&apos;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="113"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>node<sp/></highlight><highlight class="keywordflow">in</highlight><highlight class="normal"><sp/>nfa.nodes:</highlight></codeline>
+<codeline lineno="114"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>node<sp/>==<sp/>nfa.initial:</highlight></codeline>
+<codeline lineno="115"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>dot.node(<ref refid="namespacepractice1_1_1dump_1a8d3277da1b00286352f693cdb9c011a0" kindref="member">make_new_state</ref>(node),<sp/>style=</highlight><highlight class="stringliteral">&apos;filled&apos;</highlight><highlight class="normal">,<sp/>color=</highlight><highlight class="stringliteral">&apos;lightgrey&apos;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="116"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>node<sp/>==<sp/>nfa.final:</highlight></codeline>
+<codeline lineno="117"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>dot.node(<ref refid="namespacepractice1_1_1dump_1a8d3277da1b00286352f693cdb9c011a0" kindref="member">make_new_state</ref>(node),<sp/>shape=</highlight><highlight class="stringliteral">&apos;doublecircle&apos;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="118"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>dump_file.write(</highlight><highlight class="stringliteral">&quot;\n\tDump<sp/>&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="119"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespacepractice1_1_1dump_1ade4c74aabe15dae245a2b47484ca9612" kindref="member">__print_node__</ref>(node)</highlight></codeline>
+<codeline lineno="120"><highlight class="normal"></highlight></codeline>
+<codeline lineno="121"><highlight class="normal"><sp/><sp/><sp/><sp/>logging.debug(</highlight><highlight class="stringliteral">&apos;End<sp/>of<sp/>dump<sp/>NFA&apos;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="122"><highlight class="normal"><sp/><sp/><sp/><sp/>dump_file.write(</highlight><highlight class="stringliteral">&quot;||******************************************************************************||\n\n&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="123"><highlight class="normal"></highlight></codeline>
+<codeline lineno="124"><highlight class="normal"></highlight></codeline>
+<codeline lineno="125"><highlight class="normal"></highlight><highlight class="keyword">def<sp/></highlight><highlight class="normal">_tree_remove(top:<sp/>str):</highlight></codeline>
+<codeline lineno="126"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;&quot;&quot;!<sp/>Removes<sp/>all<sp/>files<sp/>in<sp/>the<sp/>current<sp/>directory.</highlight></codeline>
+<codeline lineno="127"><highlight class="stringliteral"><sp/><sp/><sp/><sp/>@param<sp/>top<sp/>Name<sp/>of<sp/>initial<sp/>directory.</highlight></codeline>
+<codeline lineno="128"><highlight class="stringliteral"><sp/><sp/><sp/><sp/>&quot;&quot;&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="129"><highlight class="normal"><sp/><sp/><sp/><sp/>logging.debug(f</highlight><highlight class="stringliteral">&apos;remove<sp/>files<sp/>and<sp/>dirs<sp/>in<sp/>{top}&apos;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="130"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>root,<sp/>dirs,<sp/>files<sp/></highlight><highlight class="keywordflow">in</highlight><highlight class="normal"><sp/>os.walk(top,<sp/>topdown=</highlight><highlight class="keyword">False</highlight><highlight class="normal">):</highlight></codeline>
+<codeline lineno="131"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>name<sp/></highlight><highlight class="keywordflow">in</highlight><highlight class="normal"><sp/>files:</highlight></codeline>
+<codeline lineno="132"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>os.remove(os.path.join(root,<sp/>name))</highlight></codeline>
+<codeline lineno="133"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>name<sp/></highlight><highlight class="keywordflow">in</highlight><highlight class="normal"><sp/>dirs:</highlight></codeline>
+<codeline lineno="134"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>os.rmdir(os.path.join(root,<sp/>name))</highlight></codeline>
+<codeline lineno="135"><highlight class="normal"><sp/><sp/><sp/><sp/>logging.debug(</highlight><highlight class="stringliteral">&apos;removing<sp/>completed&apos;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="136"><highlight class="normal"></highlight></codeline>
+<codeline lineno="137"><highlight class="normal"></highlight></codeline>
+<codeline lineno="138" refid="namespacepractice1_1_1dump_1ad9f715f29da831aa7643c91af5ebe458" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">def<sp/></highlight><highlight class="normal"><ref refid="namespacepractice1_1_1dump_1ad9f715f29da831aa7643c91af5ebe458" kindref="member">__dump__</ref>(nfa,<sp/>filename):</highlight></codeline>
+<codeline lineno="139"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;&quot;&quot;!<sp/>Dump<sp/>the<sp/>information<sp/>about<sp/>NFA</highlight></codeline>
+<codeline lineno="140"><highlight class="stringliteral"><sp/><sp/><sp/><sp/>@param<sp/>nfa:<sp/>NFA</highlight></codeline>
+<codeline lineno="141"><highlight class="stringliteral"><sp/><sp/><sp/><sp/>@param<sp/>filename:<sp/>output<sp/>file</highlight></codeline>
+<codeline lineno="142"><highlight class="stringliteral"><sp/><sp/><sp/><sp/>&quot;&quot;&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="143"><highlight class="normal"><sp/><sp/><sp/><sp/>logging.debug(</highlight><highlight class="stringliteral">&apos;Starting<sp/>dump<sp/>process...&apos;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="144"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">global</highlight><highlight class="normal"><sp/>dump_file</highlight></codeline>
+<codeline lineno="145"><highlight class="normal"></highlight></codeline>
+<codeline lineno="146"><highlight class="normal"><sp/><sp/><sp/><sp/>logging.debug(</highlight><highlight class="stringliteral">&apos;Creating<sp/>logs<sp/>dir&apos;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="147"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>os.path.isfile(</highlight><highlight class="stringliteral">&apos;./logs&apos;</highlight><highlight class="normal"><sp/>+<sp/>filename):</highlight></codeline>
+<codeline lineno="148"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>_tree_remove(</highlight><highlight class="stringliteral">&apos;./logs&apos;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="149"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">not</highlight><highlight class="normal"><sp/>os.path.isdir(</highlight><highlight class="stringliteral">&apos;./logs&apos;</highlight><highlight class="normal">):</highlight></codeline>
+<codeline lineno="150"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>os.mkdir(</highlight><highlight class="stringliteral">&apos;./logs&apos;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="151"><highlight class="normal"></highlight></codeline>
+<codeline lineno="152"><highlight class="normal"><sp/><sp/><sp/><sp/>logging.debug(</highlight><highlight class="stringliteral">&apos;chdir<sp/>to<sp/>logs&apos;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="153"><highlight class="normal"><sp/><sp/><sp/><sp/>os.chdir(</highlight><highlight class="stringliteral">&apos;./logs&apos;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="154"><highlight class="normal"></highlight></codeline>
+<codeline lineno="155"><highlight class="normal"><sp/><sp/><sp/><sp/>logging.debug(</highlight><highlight class="stringliteral">&apos;Dump<sp/>started...&apos;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="156"><highlight class="normal"><sp/><sp/><sp/><sp/>dump_file<sp/>=<sp/>open(filename,<sp/></highlight><highlight class="stringliteral">&apos;w&apos;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="157"><highlight class="normal"><sp/><sp/><sp/><sp/>dump_file.write(</highlight><highlight class="stringliteral">&quot;Dump<sp/>started...\n&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="158"><highlight class="normal"><sp/><sp/><sp/><sp/>dump_file.write(</highlight><highlight class="stringliteral">&quot;Dump<sp/>NFA...\n&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="159"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespacepractice1_1_1dump_1ab26a8f699adf1b51bbb17f5d6b0f5286" kindref="member">__print__</ref>(nfa)</highlight></codeline>
+<codeline lineno="160"><highlight class="normal"><sp/><sp/><sp/><sp/>dump_file.write(</highlight><highlight class="stringliteral">&apos;Map<sp/>of<sp/>Names:\n&apos;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="161"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>key<sp/></highlight><highlight class="keywordflow">in</highlight><highlight class="normal"><sp/>states:</highlight></codeline>
+<codeline lineno="162"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>dump_file.write(str(key)<sp/>+<sp/></highlight><highlight class="stringliteral">&apos;<sp/>-<sp/>&apos;</highlight><highlight class="normal"><sp/>+<sp/>str(states[key])<sp/>+<sp/></highlight><highlight class="stringliteral">&apos;\n&apos;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="163"><highlight class="normal"></highlight></codeline>
+<codeline lineno="164"><highlight class="normal"><sp/><sp/><sp/><sp/>logging.debug(</highlight><highlight class="stringliteral">&apos;Dump<sp/>process<sp/>ended,<sp/>exiting<sp/>from<sp/>logs&apos;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="165"><highlight class="normal"><sp/><sp/><sp/><sp/>os.chdir(</highlight><highlight class="stringliteral">&apos;..&apos;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="166"><highlight class="normal"></highlight></codeline>
+<codeline lineno="167"><highlight class="normal"><sp/><sp/><sp/><sp/>logging.debug(</highlight><highlight class="stringliteral">&apos;Creating<sp/>snapshots<sp/>dir&apos;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="168"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>os.path.isdir(</highlight><highlight class="stringliteral">&apos;./snapshots/&apos;</highlight><highlight class="normal"><sp/>+<sp/>filename):</highlight></codeline>
+<codeline lineno="169"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>_tree_remove(</highlight><highlight class="stringliteral">&apos;./snapshots&apos;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="170"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">not</highlight><highlight class="normal"><sp/>os.path.isdir(</highlight><highlight class="stringliteral">&apos;./snapshots&apos;</highlight><highlight class="normal">):</highlight></codeline>
+<codeline lineno="171"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>os.mkdir(</highlight><highlight class="stringliteral">&apos;./snapshots&apos;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="172"><highlight class="normal"></highlight></codeline>
+<codeline lineno="173"><highlight class="normal"><sp/><sp/><sp/><sp/>os.chdir(</highlight><highlight class="stringliteral">&apos;./snapshots&apos;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="174"><highlight class="normal"><sp/><sp/><sp/><sp/>logging.debug(</highlight><highlight class="stringliteral">&apos;chdir<sp/>to<sp/>snapshots&apos;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="175"><highlight class="normal"></highlight></codeline>
+<codeline lineno="176"><highlight class="normal"><sp/><sp/><sp/><sp/>logging.debug(f</highlight><highlight class="stringliteral">&apos;Creating<sp/>{filename}<sp/>dir&apos;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="177"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">not</highlight><highlight class="normal"><sp/>os.path.isdir(</highlight><highlight class="stringliteral">&apos;./&apos;</highlight><highlight class="normal"><sp/>+<sp/>filename):</highlight></codeline>
+<codeline lineno="178"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>os.mkdir(</highlight><highlight class="stringliteral">&apos;./&apos;</highlight><highlight class="normal"><sp/>+<sp/>filename)</highlight></codeline>
+<codeline lineno="179"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="180"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>_tree_remove(</highlight><highlight class="stringliteral">&apos;./&apos;</highlight><highlight class="normal"><sp/>+<sp/>filename)</highlight></codeline>
+<codeline lineno="181"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>os.rmdir(</highlight><highlight class="stringliteral">&apos;./&apos;</highlight><highlight class="normal"><sp/>+<sp/>filename)</highlight></codeline>
+<codeline lineno="182"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>os.mkdir(</highlight><highlight class="stringliteral">&apos;./&apos;</highlight><highlight class="normal"><sp/>+<sp/>filename)</highlight></codeline>
+<codeline lineno="183"><highlight class="normal"></highlight></codeline>
+<codeline lineno="184"><highlight class="normal"><sp/><sp/><sp/><sp/>logging.debug(f</highlight><highlight class="stringliteral">&apos;chdir<sp/>to<sp/>{filename}&apos;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="185"><highlight class="normal"><sp/><sp/><sp/><sp/>os.chdir(</highlight><highlight class="stringliteral">&apos;./&apos;</highlight><highlight class="normal"><sp/>+<sp/>filename)</highlight></codeline>
+<codeline lineno="186"><highlight class="normal"></highlight></codeline>
+<codeline lineno="187"><highlight class="normal"><sp/><sp/><sp/><sp/>dot.render(</highlight><highlight class="stringliteral">&apos;./&apos;</highlight><highlight class="normal"><sp/>+<sp/>filename)</highlight></codeline>
+<codeline lineno="188"><highlight class="normal"><sp/><sp/><sp/><sp/>dot.clear()</highlight></codeline>
+<codeline lineno="189"><highlight class="normal"></highlight></codeline>
+<codeline lineno="190"><highlight class="normal"><sp/><sp/><sp/><sp/>os.chdir(</highlight><highlight class="stringliteral">&apos;..&apos;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="191"><highlight class="normal"><sp/><sp/><sp/><sp/>os.chdir(</highlight><highlight class="stringliteral">&apos;..&apos;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="192"><highlight class="normal"><sp/><sp/><sp/><sp/>logging.debug(</highlight><highlight class="stringliteral">&apos;exiting<sp/>to<sp/>root&apos;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="193"><highlight class="normal"></highlight></codeline>
+<codeline lineno="194"><highlight class="normal"><sp/><sp/><sp/><sp/>logging.debug(</highlight><highlight class="stringliteral">&apos;Dump<sp/>fully<sp/>ended&apos;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="195"><highlight class="normal"><sp/><sp/><sp/><sp/>dump_file.close()</highlight></codeline>
+    </programlisting>
+    <location file="dump.py"/>
+  </compounddef>
+</doxygen>
