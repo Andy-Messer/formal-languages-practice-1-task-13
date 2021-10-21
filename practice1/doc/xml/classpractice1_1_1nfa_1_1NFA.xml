@@ -15,7 +15,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="nfa.py" line="109" column="1" bodyfile="nfa.py" bodystart="109" bodyend="-1"/>
+        <location file="nfa.py" line="114" column="1" bodyfile="nfa.py" bodystart="114" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classpractice1_1_1nfa_1_1NFA_1a8d0dd69a20182cd1647f229af000cfa5" prot="public" static="yes" mutable="no">
         <type></type>
@@ -29,10 +29,10 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="nfa.py" line="105" column="1" bodyfile="nfa.py" bodystart="105" bodyend="-1"/>
-        <referencedby refid="classpractice1_1_1nfa_1_1NFA_1a1be0698cef9313432d31dd5028cd7654" compoundref="nfa_8py" startline="111" endline="123">NFA.__init__</referencedby>
-        <referencedby refid="classpractice1_1_1nfa_1_1NFA_1a42f933055dd9fadc2a95f6f3484dc096" compoundref="nfa_8py" startline="128" endline="155">NFA.read</referencedby>
-        <referencedby refid="classpractice1_1_1nfa_1_1__CreateNFA_1a62d114c8017936187a4b318c581e0bb3" compoundref="nfa_8py" startline="260" endline="294">_CreateNFA.__init__</referencedby>
+        <location file="nfa.py" line="110" column="1" bodyfile="nfa.py" bodystart="110" bodyend="-1"/>
+        <referencedby refid="classpractice1_1_1nfa_1_1NFA_1a1be0698cef9313432d31dd5028cd7654" compoundref="nfa_8py" startline="116" endline="128">NFA.__init__</referencedby>
+        <referencedby refid="classpractice1_1_1nfa_1_1NFA_1a42f933055dd9fadc2a95f6f3484dc096" compoundref="nfa_8py" startline="133" endline="160">NFA.read</referencedby>
+        <referencedby refid="classpractice1_1_1nfa_1_1__CreateNFA_1a62d114c8017936187a4b318c581e0bb3" compoundref="nfa_8py" startline="265" endline="306">_CreateNFA.__init__</referencedby>
       </memberdef>
       <memberdef kind="variable" id="classpractice1_1_1nfa_1_1NFA_1a7d3a7a8f8b193c3a91a80dac71dcb75c" prot="public" static="yes" mutable="no">
         <type>list</type>
@@ -46,7 +46,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="nfa.py" line="107" column="1" bodyfile="nfa.py" bodystart="107" bodyend="-1"/>
+        <location file="nfa.py" line="112" column="1" bodyfile="nfa.py" bodystart="112" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-attrib">
@@ -61,7 +61,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="nfa.py" line="120" column="1" bodyfile="nfa.py" bodystart="120" bodyend="-1"/>
+        <location file="nfa.py" line="125" column="1" bodyfile="nfa.py" bodystart="125" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classpractice1_1_1nfa_1_1NFA_1adc6e5733fc3c22f0a7b2914188c49c90" prot="public" static="no" mutable="no">
         <type></type>
@@ -74,7 +74,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="nfa.py" line="122" column="1" bodyfile="nfa.py" bodystart="122" bodyend="-1"/>
+        <location file="nfa.py" line="127" column="1" bodyfile="nfa.py" bodystart="127" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">
@@ -109,8 +109,8 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="nfa.py" line="111" column="1" bodyfile="nfa.py" bodystart="111" bodyend="123"/>
-        <references refid="classpractice1_1_1nfa_1_1NFA_1a8d0dd69a20182cd1647f229af000cfa5" compoundref="nfa_8py" startline="105">NFA.initial</references>
+        <location file="nfa.py" line="116" column="1" bodyfile="nfa.py" bodystart="116" bodyend="128"/>
+        <references refid="classpractice1_1_1nfa_1_1NFA_1a8d0dd69a20182cd1647f229af000cfa5" compoundref="nfa_8py" startline="110">NFA.initial</references>
       </memberdef>
       <memberdef kind="function" id="classpractice1_1_1nfa_1_1NFA_1a42f933055dd9fadc2a95f6f3484dc096" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>bool</type>
@@ -146,8 +146,8 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="nfa.py" line="128" column="1" bodyfile="nfa.py" bodystart="128" bodyend="155"/>
-        <references refid="classpractice1_1_1nfa_1_1NFA_1a8d0dd69a20182cd1647f229af000cfa5" compoundref="nfa_8py" startline="105">NFA.initial</references>
+        <location file="nfa.py" line="133" column="1" bodyfile="nfa.py" bodystart="133" bodyend="160"/>
+        <references refid="classpractice1_1_1nfa_1_1NFA_1a8d0dd69a20182cd1647f229af000cfa5" compoundref="nfa_8py" startline="110">NFA.initial</references>
       </memberdef>
       </sectiondef>
       <sectiondef kind="private-func">
@@ -167,7 +167,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="nfa.py" line="124" column="1" bodyfile="nfa.py" bodystart="124" bodyend="127"/>
+        <location file="nfa.py" line="129" column="1" bodyfile="nfa.py" bodystart="129" bodyend="132"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -188,7 +188,7 @@
         </childnode>
       </node>
     </collaborationgraph>
-    <location file="nfa.py" line="97" column="1" bodyfile="nfa.py" bodystart="97" bodyend="159"/>
+    <location file="nfa.py" line="102" column="1" bodyfile="nfa.py" bodystart="102" bodyend="164"/>
     <listofallmembers>
       <member refid="classpractice1_1_1nfa_1_1NFA_1a1be0698cef9313432d31dd5028cd7654" prot="public" virt="non-virtual"><scope>practice1::nfa::NFA</scope><name>__init__</name></member>
       <member refid="classpractice1_1_1nfa_1_1NFA_1a8cc823aafc0ac7b770bdb45b2b851757" prot="private" virt="non-virtual"><scope>practice1::nfa::NFA</scope><name>_make_dump</name></member>

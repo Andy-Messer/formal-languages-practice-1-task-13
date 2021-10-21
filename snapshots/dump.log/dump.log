@@ -1,13 +1,9 @@
 // dump of NFA
 digraph {
-	q104 [color=lightgrey style=filled]
-	q104 -> q106 [label=eps]
-	q104 -> q107 [label=eps]
-	q108 -> q109 [label=eps]
-	q106 -> q110 [label=a]
-	q110 -> q108 [label=eps]
-	q107 -> q111 [label=b]
-	q111 -> q108 [label=eps]
-	q109 -> q105 [label=c]
-	q105 [shape=doublecircle]
+	q0 [color=lightgrey style=filled]
+	q0 [shape=doublecircle]
+	q0 -> q1 [label=a]
+	q1 -> q2 [label=eps]
+	q2 -> q3 [label=b]
+	q3 -> q0 [label=eps]
 }

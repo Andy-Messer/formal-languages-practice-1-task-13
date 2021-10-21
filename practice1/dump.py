@@ -3,7 +3,7 @@
 ##
 # @file dump.py
 #
-# @brief auxiliary module for uploading debugrmation about NFA
+# @brief auxiliary module for uploading debug information about NFA
 #
 # @section description_main Description
 # Collects a textual description of the state of the automaton
@@ -54,9 +54,9 @@ def __print_brief__(node):
     """! Print a summary of the NFA node
 
     Short output format: 'node.name node.final'
-    @param node: node the debugrmation about which should be output
+    @param node: node the debug information about which should be output
     """
-    logging.debug(f'printing brief debugrmation about node {id(node)}')
+    logging.debug(f'printing brief debug information about node {id(node)}')
     dump_file.write("\t\t\tNode id: " + make_new_state(node) + ", is final: " + str(node.final) + '\n')
 
 
@@ -80,7 +80,7 @@ def __print_node__(node):
     Output the name of the node, its final and a list of neighbors with their number
     @param node: printing node
     """
-    logging.debug(f'dump main debugrmation about the node {id(node)}')
+    logging.debug(f'dump main debug information about the node {id(node)}')
     dump_file.write("Node id: " + make_new_state(node) + ", is final: " + str(node.final) + ', ')
     dump_file.write("Count of transitions: " + str(__get_transitions_count(node)) + '\n')
 
@@ -102,7 +102,7 @@ def __print__(nfa):
     Make notes about nodes and their connections
     @param nfa: nondeterministic finite automaton that need to be print
     """
-    logging.debug(f'Dump main debugrmation about NFA {nfa}')
+    logging.debug(f'Dump main debug information about NFA {nfa}')
     dump_file.write("||******************************************************************************||\n")
     dump_file.write(
         "\tNFA id: " + str(id(nfa)) + ", initial: " + make_new_state(nfa.initial) + ", final: " + make_new_state(

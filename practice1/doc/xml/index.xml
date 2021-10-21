@@ -58,13 +58,9 @@
   </compound>
   <compound refid="____init_____8py" kind="file"><name>__init__.py</name>
   </compound>
-  <compound refid="api_8md" kind="file"><name>api.md</name>
-  </compound>
   <compound refid="dump_8py" kind="file"><name>dump.py</name>
   </compound>
   <compound refid="nfa_8py" kind="file"><name>nfa.py</name>
-  </compound>
-  <compound refid="md_api" kind="page"><name>md_api</name>
   </compound>
   <compound refid="indexpage" kind="page"><name>index</name>
   </compound>

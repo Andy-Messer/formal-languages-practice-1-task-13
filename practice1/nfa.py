@@ -23,12 +23,12 @@
 # Copyright (c) 2021 Andrey Krotov. All rights reserved.
 
 # Imports
-from practice1.dump import __dump__
-import logging.config
 from os import path, remove
+from practice1.dump import __dump__
 import json
+import logging.config
 
-# Logging
+# Logging, setup config file
 if path.isfile("./logs/logs.log"):
     remove("./logs/logs.log")
 with open("./practice1/logging_configuration.json", 'r') as logging_configuration_file:
@@ -46,8 +46,11 @@ def _is_letter(symbol: str) -> bool:
     @return True if symbol in alphabet
     @return False if symbol not in alphabet
     """
+    logging.debug(f'Check for the letter in alphabet: %s', symbol)
     if symbol in __alphabet_of_letters:
+        logging.debug(f"It's letter from alphabet!")
         return True
+    logging.debug(f"It isn't letter from alphabet(")
     return False
 
 
@@ -63,8 +66,10 @@ class _Node:
     final = False
 
     def __init__(self, transitions=None, final=False):
+        logging.debug('Node initialization...')
         self.transitions = transitions
         self.final = final
+        logging.debug('Node initialization completed.')
 
 
 def _is_way_to(state: _Node, letter: str) -> bool:
@@ -162,7 +167,7 @@ class _CreateNFA:
     #################################
     # Section: Architecture of NFA
     ##########
-    # The starting state of nondeterministicailed finite automaton
+    # The starting state of nondeterministic finite automaton
     initial = _Node()
     # List of states of nondeterministic finite automaton
     nodes = []
@@ -258,20 +263,27 @@ class _CreateNFA:
         self.stack.append(new_nfa)
 
     def __init__(self, reg_exp=None):
+        """! Constructing NFA instance """
         if reg_exp is not None:
+            logging.info("Constructing NFA from regExpr")
+            logging.info("Initialize some basic variables")
             self.initial = _Node()
             self.nodes = []
             self.final = _Node()
             self.nfa = None
             self.stack = []
+            logging.info("Trying to parse regExpr")
             try:
+                logging.info("Parse regExpr letter by letter")
                 for i in range(len(reg_exp)):
                     if _is_letter(reg_exp[i]):
+                        logging.info("Creating some basic NFA for one letter")
                         new_nfa = _CreateNFA()
                         if reg_exp[i] not in new_nfa.initial.transitions:
                             new_nfa.initial.transitions.setdefault(reg_exp[i], [])
                         new_nfa.initial.transitions[reg_exp[i]].append(new_nfa.final)
                         self.stack.append(new_nfa)
+                        logging.info("Created.")
                     elif reg_exp[i] == '.':
                         self.reg_concatenation()
                     elif reg_exp[i] == '*':
@@ -283,10 +295,10 @@ class _CreateNFA:
                     else:
                         raise ValueError(f'No such operation or letter: {reg_exp[i]}')
                 self.nfa = self.stack[-1]
+                logging.info("NFA Constructed.")
             except ValueError as e:
                 self.logger.error(e)
                 raise e
-                # print(try again)
         else:
             self.nodes = [_Node(dict()), _Node(dict(), final=True)]
             self.initial = self.nodes[0]

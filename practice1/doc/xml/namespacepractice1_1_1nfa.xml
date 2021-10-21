@@ -76,7 +76,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="nfa.py" line="83" column="1" bodyfile="nfa.py" bodystart="83" bodyend="93"/>
+        <location file="nfa.py" line="88" column="1" bodyfile="nfa.py" bodystart="88" bodyend="98"/>
       </memberdef>
       <memberdef kind="function" id="namespacepractice1_1_1nfa_1a12e43040f4837c23c481fc929939fed5" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>bool</type>
@@ -108,7 +108,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="nfa.py" line="43" column="1" bodyfile="nfa.py" bodystart="43" bodyend="53"/>
+        <location file="nfa.py" line="43" column="1" bodyfile="nfa.py" bodystart="43" bodyend="56"/>
       </memberdef>
       <memberdef kind="function" id="namespacepractice1_1_1nfa_1a44b82383fce3d09db5a6b4ee9e553c6b" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>bool</type>
@@ -152,7 +152,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="nfa.py" line="70" column="1" bodyfile="nfa.py" bodystart="70" bodyend="82"/>
+        <location file="nfa.py" line="75" column="1" bodyfile="nfa.py" bodystart="75" bodyend="87"/>
       </memberdef>
       </sectiondef>
     <briefdescription>

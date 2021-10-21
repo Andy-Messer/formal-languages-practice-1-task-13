@@ -15,7 +15,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="nfa.py" line="63" column="1" bodyfile="nfa.py" bodystart="63" bodyend="-1"/>
+        <location file="nfa.py" line="66" column="1" bodyfile="nfa.py" bodystart="66" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classpractice1_1_1nfa_1_1__Node_1a2594171e7c2a90ab61e43e1bc68adaf7" prot="public" static="yes" mutable="no">
         <type></type>
@@ -29,8 +29,8 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="nfa.py" line="61" column="1" bodyfile="nfa.py" bodystart="61" bodyend="-1"/>
-        <referencedby refid="classpractice1_1_1nfa_1_1__Node_1ae8d7d57832bfb87f45bdc9b6e8bfc030" compoundref="nfa_8py" startline="65" endline="69">_Node.__init__</referencedby>
+        <location file="nfa.py" line="64" column="1" bodyfile="nfa.py" bodystart="64" bodyend="-1"/>
+        <referencedby refid="classpractice1_1_1nfa_1_1__Node_1ae8d7d57832bfb87f45bdc9b6e8bfc030" compoundref="nfa_8py" startline="68" endline="74">_Node.__init__</referencedby>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-attrib">
@@ -45,7 +45,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="nfa.py" line="67" column="1" bodyfile="nfa.py" bodystart="67" bodyend="-1"/>
+        <location file="nfa.py" line="71" column="1" bodyfile="nfa.py" bodystart="71" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">
@@ -74,8 +74,8 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="nfa.py" line="65" column="1" bodyfile="nfa.py" bodystart="65" bodyend="69"/>
-        <references refid="classpractice1_1_1nfa_1_1__Node_1a2594171e7c2a90ab61e43e1bc68adaf7" compoundref="nfa_8py" startline="61">_Node.transitions</references>
+        <location file="nfa.py" line="68" column="1" bodyfile="nfa.py" bodystart="68" bodyend="74"/>
+        <references refid="classpractice1_1_1nfa_1_1__Node_1a2594171e7c2a90ab61e43e1bc68adaf7" compoundref="nfa_8py" startline="64">_Node.transitions</references>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -96,7 +96,7 @@
         </childnode>
       </node>
     </collaborationgraph>
-    <location file="nfa.py" line="57" column="1" bodyfile="nfa.py" bodystart="57" bodyend="70"/>
+    <location file="nfa.py" line="60" column="1" bodyfile="nfa.py" bodystart="60" bodyend="75"/>
     <listofallmembers>
       <member refid="classpractice1_1_1nfa_1_1__Node_1ae8d7d57832bfb87f45bdc9b6e8bfc030" prot="public" virt="non-virtual"><scope>practice1::nfa::_Node</scope><name>__init__</name></member>
       <member refid="classpractice1_1_1nfa_1_1__Node_1af28a838c358ed1f4ae4ebd0b702ea078" prot="public" virt="non-virtual"><scope>practice1::nfa::_Node</scope><name>final</name></member>

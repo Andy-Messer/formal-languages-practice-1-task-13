@@ -4,7 +4,7 @@
     <compoundname>dump.py</compoundname>
     <innernamespace refid="namespacepractice1_1_1dump">practice1::dump</innernamespace>
     <briefdescription>
-<para>auxiliary module for uploading debugrmation about NFA </para>
+<para>auxiliary module for uploading debug information about NFA </para>
     </briefdescription>
     <detaileddescription>
 <sect1 id="index_1description_main">
@@ -69,9 +69,9 @@
 <codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;&quot;&quot;!<sp/>Print<sp/>a<sp/>summary<sp/>of<sp/>the<sp/>NFA<sp/>node</highlight></codeline>
 <codeline lineno="55"><highlight class="stringliteral"></highlight></codeline>
 <codeline lineno="56"><highlight class="stringliteral"><sp/><sp/><sp/><sp/>Short<sp/>output<sp/>format:<sp/>&apos;node.name<sp/>node.final&apos;</highlight></codeline>
-<codeline lineno="57"><highlight class="stringliteral"><sp/><sp/><sp/><sp/>@param<sp/>node:<sp/>node<sp/>the<sp/>debugrmation<sp/>about<sp/>which<sp/>should<sp/>be<sp/>output</highlight></codeline>
+<codeline lineno="57"><highlight class="stringliteral"><sp/><sp/><sp/><sp/>@param<sp/>node:<sp/>node<sp/>the<sp/>debug<sp/>information<sp/>about<sp/>which<sp/>should<sp/>be<sp/>output</highlight></codeline>
 <codeline lineno="58"><highlight class="stringliteral"><sp/><sp/><sp/><sp/>&quot;&quot;&quot;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/>logging.debug(f</highlight><highlight class="stringliteral">&apos;printing<sp/>brief<sp/>debugrmation<sp/>about<sp/>node<sp/>{id(node)}&apos;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/>logging.debug(f</highlight><highlight class="stringliteral">&apos;printing<sp/>brief<sp/>debug<sp/>information<sp/>about<sp/>node<sp/>{id(node)}&apos;</highlight><highlight class="normal">)</highlight></codeline>
 <codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/>dump_file.write(</highlight><highlight class="stringliteral">&quot;\t\t\tNode<sp/>id:<sp/>&quot;</highlight><highlight class="normal"><sp/>+<sp/><ref refid="namespacepractice1_1_1dump_1a8d3277da1b00286352f693cdb9c011a0" kindref="member">make_new_state</ref>(node)<sp/>+<sp/></highlight><highlight class="stringliteral">&quot;,<sp/>is<sp/>final:<sp/>&quot;</highlight><highlight class="normal"><sp/>+<sp/>str(node.final)<sp/>+<sp/></highlight><highlight class="stringliteral">&apos;\n&apos;</highlight><highlight class="normal">)</highlight></codeline>
 <codeline lineno="61"><highlight class="normal"></highlight></codeline>
 <codeline lineno="62"><highlight class="normal"></highlight></codeline>
@@ -95,7 +95,7 @@
 <codeline lineno="80"><highlight class="stringliteral"><sp/><sp/><sp/><sp/>Output<sp/>the<sp/>name<sp/>of<sp/>the<sp/>node,<sp/>its<sp/>final<sp/>and<sp/>a<sp/>list<sp/>of<sp/>neighbors<sp/>with<sp/>their<sp/>number</highlight></codeline>
 <codeline lineno="81"><highlight class="stringliteral"><sp/><sp/><sp/><sp/>@param<sp/>node:<sp/>printing<sp/>node</highlight></codeline>
 <codeline lineno="82"><highlight class="stringliteral"><sp/><sp/><sp/><sp/>&quot;&quot;&quot;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/>logging.debug(f</highlight><highlight class="stringliteral">&apos;dump<sp/>main<sp/>debugrmation<sp/>about<sp/>the<sp/>node<sp/>{id(node)}&apos;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/>logging.debug(f</highlight><highlight class="stringliteral">&apos;dump<sp/>main<sp/>debug<sp/>information<sp/>about<sp/>the<sp/>node<sp/>{id(node)}&apos;</highlight><highlight class="normal">)</highlight></codeline>
 <codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/>dump_file.write(</highlight><highlight class="stringliteral">&quot;Node<sp/>id:<sp/>&quot;</highlight><highlight class="normal"><sp/>+<sp/><ref refid="namespacepractice1_1_1dump_1a8d3277da1b00286352f693cdb9c011a0" kindref="member">make_new_state</ref>(node)<sp/>+<sp/></highlight><highlight class="stringliteral">&quot;,<sp/>is<sp/>final:<sp/>&quot;</highlight><highlight class="normal"><sp/>+<sp/>str(node.final)<sp/>+<sp/></highlight><highlight class="stringliteral">&apos;,<sp/>&apos;</highlight><highlight class="normal">)</highlight></codeline>
 <codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/>dump_file.write(</highlight><highlight class="stringliteral">&quot;Count<sp/>of<sp/>transitions:<sp/>&quot;</highlight><highlight class="normal"><sp/>+<sp/>str(__get_transitions_count(node))<sp/>+<sp/></highlight><highlight class="stringliteral">&apos;\n&apos;</highlight><highlight class="normal">)</highlight></codeline>
 <codeline lineno="86"><highlight class="normal"></highlight></codeline>
@@ -117,7 +117,7 @@
 <codeline lineno="102"><highlight class="stringliteral"><sp/><sp/><sp/><sp/>Make<sp/>notes<sp/>about<sp/>nodes<sp/>and<sp/>their<sp/>connections</highlight></codeline>
 <codeline lineno="103"><highlight class="stringliteral"><sp/><sp/><sp/><sp/>@param<sp/>nfa:<sp/>nondeterministic<sp/>finite<sp/>automaton<sp/>that<sp/>need<sp/>to<sp/>be<sp/>print</highlight></codeline>
 <codeline lineno="104"><highlight class="stringliteral"><sp/><sp/><sp/><sp/>&quot;&quot;&quot;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="105"><highlight class="normal"><sp/><sp/><sp/><sp/>logging.debug(f</highlight><highlight class="stringliteral">&apos;Dump<sp/>main<sp/>debugrmation<sp/>about<sp/>NFA<sp/>{nfa}&apos;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="105"><highlight class="normal"><sp/><sp/><sp/><sp/>logging.debug(f</highlight><highlight class="stringliteral">&apos;Dump<sp/>main<sp/>debug<sp/>information<sp/>about<sp/>NFA<sp/>{nfa}&apos;</highlight><highlight class="normal">)</highlight></codeline>
 <codeline lineno="106"><highlight class="normal"><sp/><sp/><sp/><sp/>dump_file.write(</highlight><highlight class="stringliteral">&quot;||******************************************************************************||\n&quot;</highlight><highlight class="normal">)</highlight></codeline>
 <codeline lineno="107"><highlight class="normal"><sp/><sp/><sp/><sp/>dump_file.write(</highlight></codeline>
 <codeline lineno="108"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;\tNFA<sp/>id:<sp/>&quot;</highlight><highlight class="normal"><sp/>+<sp/>str(id(nfa))<sp/>+<sp/></highlight><highlight class="stringliteral">&quot;,<sp/>initial:<sp/>&quot;</highlight><highlight class="normal"><sp/>+<sp/><ref refid="namespacepractice1_1_1dump_1a8d3277da1b00286352f693cdb9c011a0" kindref="member">make_new_state</ref>(nfa.initial)<sp/>+<sp/></highlight><highlight class="stringliteral">&quot;,<sp/>final:<sp/>&quot;</highlight><highlight class="normal"><sp/>+<sp/><ref refid="namespacepractice1_1_1dump_1a8d3277da1b00286352f693cdb9c011a0" kindref="member">make_new_state</ref>(</highlight></codeline>

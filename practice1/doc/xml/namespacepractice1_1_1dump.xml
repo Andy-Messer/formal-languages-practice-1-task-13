@@ -167,7 +167,7 @@
 <parametername>node</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>node the debugrmation about which should be output </para>
+<para>node the debug information about which should be output </para>
 </parameterdescription>
 </parameteritem>
 </parameterlist>

@@ -51,8 +51,8 @@ def solve(istream=sys.stdin, ostream=sys.stdout):
             logging.info(f'Start building NFA...')
             try:
                 nfa_global = NFA(reg)
-            except IndexError as e:
-                return e
+            except IndexError:
+                raise IndexError
             logging.debug(f'Dumping NFA... (to see dumpfile go to "./logs/dump.log" or "./snapshots"')
             nfa_global._make_dump()
 
@@ -86,10 +86,10 @@ def solve(istream=sys.stdin, ostream=sys.stdout):
             logging.info('Exiting from "solve"')
             return ans
 
-        except IndexError as e:
+        except IndexError:
             logging.error('failed to build the NFA')
             raise IndexError
 
     except Exception as e:
         logging.error('Wrong input...')
-        return e
+        raise e

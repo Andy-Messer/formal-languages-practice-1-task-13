@@ -1,5 +1,4 @@
 import os
-
 import pytest
 from practice1 import solve, nfa
 import io
@@ -66,18 +65,21 @@ def test_10():
 
 
 def test_11():
-    test_input = io.StringIO('abcd ac')
-    assert type(solve(test_input)) is ValueError
+    with pytest.raises(ValueError):
+        test_input = io.StringIO('abcd ac')
+        solve(test_input)
 
 
 def test_11():
-    test_input = io.StringIO('abc')
-    assert type(solve(test_input)) is IndexError
+    with pytest.raises(IndexError):
+        test_input = io.StringIO('abc')
+        solve(test_input)
 
 
 def test_12():
-    test_input = io.StringIO('.. a')
-    assert type(solve(test_input)) is IndexError
+    with pytest.raises(IndexError):
+        test_input = io.StringIO('.. a')
+        solve(test_input)
 
 
 def test_13():
@@ -89,8 +91,9 @@ def test_13():
 
 
 def test_14():
-    test_input = io.StringIO('')
-    assert type(solve(test_input)) is EOFError
+    with pytest.raises(EOFError):
+        test_input = io.StringIO('')
+        solve(test_input)
 
 
 def test_15():
@@ -99,6 +102,7 @@ def test_15():
     nfa_global = nfa.NFA(reg)
     nfa_global._make_dump()
     assert True is os.path.isfile('./logs/dump.log')
+
 
 def test_16():
     reg = 'ab+c.'

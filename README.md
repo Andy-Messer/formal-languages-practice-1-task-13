@@ -1,3 +1,79 @@
+# Задача:
+
+> 13. Даны α и слово u ∈ {a, b, c} ∗ . Найти длину самого длинного подслова u, принадлежащего L.
+
+# Корректность и идея:
+> Сначала обозначим корректность и идею:
+Построим НКА по данному регулярному выражению, если НКА построить не удалось ввод был не корректен.
+Воспользуемся тем, что если НКА может прочитать данное пользователем слово, то оно принадлежит языку,
+иначе не принадлежит.
+
+# Решение:
+## Шаг 1:
+> Т.к. пользователю разрешено передавать поток вывода и ввода, обрабатываем их.
+``` python
+if isinstance(istream, type(io.StringIO())):
+    sys.stdin = istream
+if isinstance(ostream, type(io.StringIO())):
+    sys.stdout = ostream
+```
+## Шаг 2:
+> Далее считываем из потока строку и парсим по пробелам.
+> Если слов меньше чем нужно или больше кидаем исключение.
+
+## Шаг 3:
+> Перебираем все подслова переданной строки и проверяем на ответ.
+
+## Шаг 4:
+> Начинаем строить автомат.
+> Будем парсить по символьно если встречаем символ из алфавита добавляем простейший НКА.
+
+![](practice1/doc/2.png)
+
+> Рассмотри операцию '.' для букв a, b
+
+![](practice1/doc/1.png)
+
+> операция '+' для букв a, b
+
+![](practice1/doc/3.png)
+
+> операция '*' для слова ab
+
+![](practice1/doc/4.png)
+
+## Шаг 5
+> Запускаем BFS по автомату с некоторыми пометками для выхода.
+``` python
+# Putting the starting state in the queue
+index = 0
+q = [[self.initial, index]]
+while len(q) > 0:
+    # Take out the current state
+    state = q[0][0]
+    ind = q[0][1]
+    q.pop(0)
+    # Processing eps transitions
+    for next_state in _get_ways(state, 'eps'):
+        q.append([next_state, ind])
+    if ind < len(string):
+        # Put in the queue all states reachable by a given letter
+        if _is_way_to(state, string[ind]):
+            for next_state in _get_ways(state, string[ind]):
+                q.append([next_state, ind + 1])
+    elif state.final:
+        return True
+return False
+```
+
+## Шаг 6
+> Выводим ответ
+
+## Результаты тестирования
+
+![](practice1/doc/picture1.png)
+
+# Документация
 # Summary
 
  Members                        | Descriptions                                
@@ -75,7 +151,7 @@ Print a summary of the NFA node.
 
 Short output format: 'node.name node.final' 
 #### Parameters
-* `node` node the debugrmation about which should be output
+* `node` node the debug information about which should be output
 
 #### `public def `[`__print_node__`](#namespacepractice1_1_1dump_1ade4c74aabe15dae245a2b47484ca9612)`(node)` 
 
@@ -169,7 +245,7 @@ Functor for creating [NFA](#classpractice1_1_1nfa_1_1NFA).
 --------------------------------|---------------------------------------------
 `public  `[`nodes`](#classpractice1_1_1nfa_1_1__CreateNFA_1a6da5270e48c8b5c2f0dbaa008af4df76) | 
 `public  `[`stack`](#classpractice1_1_1nfa_1_1__CreateNFA_1a37d7c639a3adefa88200027e9f78ba3f) | 
-`public def `[`__init__`](#classpractice1_1_1nfa_1_1__CreateNFA_1a62d114c8017936187a4b318c581e0bb3)`(self,reg_exp)` | 
+`public def `[`__init__`](#classpractice1_1_1nfa_1_1__CreateNFA_1a62d114c8017936187a4b318c581e0bb3)`(self,reg_exp)` | Constructing [NFA](#classpractice1_1_1nfa_1_1NFA) instance.
 `public def `[`reg_concatenation`](#classpractice1_1_1nfa_1_1__CreateNFA_1a5c3712c31bdf8318bd4b732d4e99014b)`(self)` | Regex concatenation This method takes the last two elements in stack and concatenates.
 `public def `[`reg_iteration`](#classpractice1_1_1nfa_1_1__CreateNFA_1a377c78827ef6e6c6bfa1e88c880b6882)`(self)` | Regex iteration This method takes the last element and applies the Kleene star.
 `public def `[`reg_or`](#classpractice1_1_1nfa_1_1__CreateNFA_1a57eb512c08bd3207c3a41667f054dc65)`(self)` | boolean 'or' for regular expressions This method takes the last two elements in stack and forks them into one block with the help of two additional states.
@@ -181,6 +257,8 @@ Functor for creating [NFA](#classpractice1_1_1nfa_1_1NFA).
 #### `public  `[`stack`](#classpractice1_1_1nfa_1_1__CreateNFA_1a37d7c639a3adefa88200027e9f78ba3f) 
 
 #### `public def `[`__init__`](#classpractice1_1_1nfa_1_1__CreateNFA_1a62d114c8017936187a4b318c581e0bb3)`(self,reg_exp)` 
+
+Constructing [NFA](#classpractice1_1_1nfa_1_1NFA) instance.
 
 #### `public def `[`reg_concatenation`](#classpractice1_1_1nfa_1_1__CreateNFA_1a5c3712c31bdf8318bd4b732d4e99014b)`(self)` 
 
