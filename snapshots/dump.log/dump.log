@@ -1,9 +1,0 @@
-// dump of NFA
-digraph {
-	q0 [color=lightgrey style=filled]
-	q0 [shape=doublecircle]
-	q0 -> q1 [label=a]
-	q1 -> q2 [label=eps]
-	q2 -> q3 [label=b]
-	q3 -> q0 [label=eps]
-}

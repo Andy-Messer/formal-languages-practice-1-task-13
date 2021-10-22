@@ -67,7 +67,179 @@ return False
 ```
 
 ## Шаг 6
-> Выводим ответ
+> Выводим ответ: максимальная длина подстроки
+
+# Тесты из условия 
+## Тест 1 "ab+c.aba.*.bac.+.+* babc"
+> Ответ: 2
+
+### logs
+``` python
+2021-10-22 16:02:47,827 - root - INFO - Redirecting input and output streams
+2021-10-22 16:02:47,828 - root - INFO - Done...
+2021-10-22 16:03:02,139 - root - INFO - Submitted to the entrance: "ab+c.aba.*.bac.+.+*", "babc"
+2021-10-22 16:03:02,140 - root - INFO - Start building NFA...
+2021-10-22 16:03:02,140 - root - INFO - Constructing NFA from regExpr
+2021-10-22 16:03:02,141 - root - INFO - Initialize some basic variables
+2021-10-22 16:03:02,141 - root - INFO - Trying to parse regExpr
+2021-10-22 16:03:02,141 - root - INFO - Parse regExpr letter by letter
+2021-10-22 16:03:02,142 - root - INFO - Creating some basic NFA for one letter
+2021-10-22 16:03:02,142 - root - INFO - Created.
+2021-10-22 16:03:02,142 - root - INFO - Creating some basic NFA for one letter
+2021-10-22 16:03:02,143 - root - INFO - Created.
+2021-10-22 16:03:02,144 - root - INFO - Creating some basic NFA for one letter
+2021-10-22 16:03:02,144 - root - INFO - Created.
+2021-10-22 16:03:02,144 - root - INFO - Creating some basic NFA for one letter
+2021-10-22 16:03:02,144 - root - INFO - Created.
+2021-10-22 16:03:02,145 - root - INFO - Creating some basic NFA for one letter
+2021-10-22 16:03:02,145 - root - INFO - Created.
+2021-10-22 16:03:02,145 - root - INFO - Creating some basic NFA for one letter
+2021-10-22 16:03:02,145 - root - INFO - Created.
+2021-10-22 16:03:02,146 - root - INFO - Creating some basic NFA for one letter
+2021-10-22 16:03:02,146 - root - INFO - Created.
+2021-10-22 16:03:02,146 - root - INFO - Creating some basic NFA for one letter
+2021-10-22 16:03:02,147 - root - INFO - Created.
+2021-10-22 16:03:02,147 - root - INFO - Creating some basic NFA for one letter
+2021-10-22 16:03:02,147 - root - INFO - Created.
+2021-10-22 16:03:02,148 - root - INFO - NFA Constructed.
+2021-10-22 16:03:03,461 - root - INFO - Start solving the task.
+2021-10-22 16:03:03,461 - root - INFO - ------------------------------------------------
+2021-10-22 16:03:03,462 - root - INFO - "b" has been passed to NFA for reading
+2021-10-22 16:03:03,462 - root - INFO - the Line wasn't read
+2021-10-22 16:03:03,462 - root - INFO - ------------------------------------------------
+2021-10-22 16:03:03,462 - root - INFO - "ba" has been passed to NFA for reading
+2021-10-22 16:03:03,463 - root - INFO - the Line wasn't read
+2021-10-22 16:03:03,463 - root - INFO - ------------------------------------------------
+2021-10-22 16:03:03,463 - root - INFO - "bab" has been passed to NFA for reading
+2021-10-22 16:03:03,463 - root - INFO - the Line wasn't read
+2021-10-22 16:03:03,464 - root - INFO - ------------------------------------------------
+2021-10-22 16:03:03,464 - root - INFO - "babc" has been passed to NFA for reading
+2021-10-22 16:03:03,464 - root - INFO - the Line wasn't read
+2021-10-22 16:03:03,464 - root - INFO - ------------------------------------------------
+2021-10-22 16:03:03,465 - root - INFO - "a" has been passed to NFA for reading
+2021-10-22 16:03:03,465 - root - INFO - the Line wasn't read
+2021-10-22 16:03:03,465 - root - INFO - ------------------------------------------------
+2021-10-22 16:03:03,465 - root - INFO - "ab" has been passed to NFA for reading
+2021-10-22 16:03:03,466 - root - INFO - the Line was read!
+2021-10-22 16:03:03,467 - root - INFO - Checking the length of substring
+2021-10-22 16:03:03,467 - root - INFO - New answer!!! 2
+2021-10-22 16:03:03,467 - root - INFO - Checked.
+2021-10-22 16:03:03,467 - root - INFO - ------------------------------------------------
+2021-10-22 16:03:03,468 - root - INFO - "abc" has been passed to NFA for reading
+2021-10-22 16:03:03,468 - root - INFO - the Line wasn't read
+2021-10-22 16:03:03,468 - root - INFO - ------------------------------------------------
+2021-10-22 16:03:03,469 - root - INFO - "b" has been passed to NFA for reading
+2021-10-22 16:03:03,469 - root - INFO - the Line wasn't read
+2021-10-22 16:03:03,469 - root - INFO - ------------------------------------------------
+2021-10-22 16:03:03,469 - root - INFO - "bc" has been passed to NFA for reading
+2021-10-22 16:03:03,470 - root - INFO - the Line was read!
+2021-10-22 16:03:03,470 - root - INFO - Checking the length of substring
+2021-10-22 16:03:03,470 - root - INFO - Checked.
+2021-10-22 16:03:03,470 - root - INFO - ------------------------------------------------
+2021-10-22 16:03:03,471 - root - INFO - "c" has been passed to NFA for reading
+2021-10-22 16:03:03,471 - root - INFO - the Line wasn't read
+2021-10-22 16:03:03,471 - root - INFO - Exiting from "solve"
+```
+
+![](practice1/doc/5.png)
+
+## Тест 2 "acb..bab.c.*.ab.ba.+.+*a. abbaa"
+> Ответ: 4
+
+### logs
+```python
+2021-10-22 16:11:47,633 - root - INFO - Redirecting input and output streams
+2021-10-22 16:11:47,634 - root - INFO - Done...
+2021-10-22 16:11:49,299 - root - INFO - Submitted to the entrance: "acb..bab.c.*.ab.ba.+.+*a.", "abbaa"
+2021-10-22 16:11:49,299 - root - INFO - Start building NFA...
+2021-10-22 16:11:49,300 - root - INFO - Constructing NFA from regExpr
+2021-10-22 16:11:49,300 - root - INFO - Initialize some basic variables
+2021-10-22 16:11:49,300 - root - INFO - Trying to parse regExpr
+2021-10-22 16:11:49,300 - root - INFO - Parse regExpr letter by letter
+2021-10-22 16:11:49,300 - root - INFO - Creating some basic NFA for one letter
+2021-10-22 16:11:49,300 - root - INFO - Created.
+2021-10-22 16:11:49,300 - root - INFO - Creating some basic NFA for one letter
+2021-10-22 16:11:49,306 - root - INFO - Created.
+2021-10-22 16:11:49,306 - root - INFO - Creating some basic NFA for one letter
+2021-10-22 16:11:49,306 - root - INFO - Created.
+2021-10-22 16:11:49,306 - root - INFO - Creating some basic NFA for one letter
+2021-10-22 16:11:49,306 - root - INFO - Created.
+2021-10-22 16:11:49,306 - root - INFO - Creating some basic NFA for one letter
+2021-10-22 16:11:49,307 - root - INFO - Created.
+2021-10-22 16:11:49,307 - root - INFO - Creating some basic NFA for one letter
+2021-10-22 16:11:49,307 - root - INFO - Created.
+2021-10-22 16:11:49,307 - root - INFO - Creating some basic NFA for one letter
+2021-10-22 16:11:49,307 - root - INFO - Created.
+2021-10-22 16:11:49,307 - root - INFO - Creating some basic NFA for one letter
+2021-10-22 16:11:49,307 - root - INFO - Created.
+2021-10-22 16:11:49,307 - root - INFO - Creating some basic NFA for one letter
+2021-10-22 16:11:49,308 - root - INFO - Created.
+2021-10-22 16:11:49,308 - root - INFO - Creating some basic NFA for one letter
+2021-10-22 16:11:49,308 - root - INFO - Created.
+2021-10-22 16:11:49,308 - root - INFO - Creating some basic NFA for one letter
+2021-10-22 16:11:49,308 - root - INFO - Created.
+2021-10-22 16:11:49,308 - root - INFO - Creating some basic NFA for one letter
+2021-10-22 16:11:49,308 - root - INFO - Created.
+2021-10-22 16:11:49,308 - root - INFO - NFA Constructed.
+2021-10-22 16:11:49,407 - root - INFO - Start solving the task.
+2021-10-22 16:11:49,407 - root - INFO - ------------------------------------------------
+2021-10-22 16:11:49,407 - root - INFO - "a" has been passed to NFA for reading
+2021-10-22 16:11:49,407 - root - INFO - the Line was read!
+2021-10-22 16:11:49,407 - root - INFO - Checking the length of substring
+2021-10-22 16:11:49,407 - root - INFO - New answer!!! 1
+2021-10-22 16:11:49,407 - root - INFO - Checked.
+2021-10-22 16:11:49,407 - root - INFO - ------------------------------------------------
+2021-10-22 16:11:49,407 - root - INFO - "ab" has been passed to NFA for reading
+2021-10-22 16:11:49,407 - root - INFO - the Line wasn't read
+2021-10-22 16:11:49,407 - root - INFO - ------------------------------------------------
+2021-10-22 16:11:49,408 - root - INFO - "abb" has been passed to NFA for reading
+2021-10-22 16:11:49,408 - root - INFO - the Line wasn't read
+2021-10-22 16:11:49,408 - root - INFO - ------------------------------------------------
+2021-10-22 16:11:49,408 - root - INFO - "abba" has been passed to NFA for reading
+2021-10-22 16:11:49,408 - root - INFO - the Line wasn't read
+2021-10-22 16:11:49,408 - root - INFO - ------------------------------------------------
+2021-10-22 16:11:49,408 - root - INFO - "abbaa" has been passed to NFA for reading
+2021-10-22 16:11:49,408 - root - INFO - the Line wasn't read
+2021-10-22 16:11:49,408 - root - INFO - ------------------------------------------------
+2021-10-22 16:11:49,408 - root - INFO - "b" has been passed to NFA for reading
+2021-10-22 16:11:49,408 - root - INFO - the Line wasn't read
+2021-10-22 16:11:49,408 - root - INFO - ------------------------------------------------
+2021-10-22 16:11:49,408 - root - INFO - "bb" has been passed to NFA for reading
+2021-10-22 16:11:49,408 - root - INFO - the Line wasn't read
+2021-10-22 16:11:49,408 - root - INFO - ------------------------------------------------
+2021-10-22 16:11:49,408 - root - INFO - "bba" has been passed to NFA for reading
+2021-10-22 16:11:49,408 - root - INFO - the Line wasn't read
+2021-10-22 16:11:49,409 - root - INFO - ------------------------------------------------
+2021-10-22 16:11:49,409 - root - INFO - "bbaa" has been passed to NFA for reading
+2021-10-22 16:11:49,409 - root - INFO - the Line was read!
+2021-10-22 16:11:49,409 - root - INFO - Checking the length of substring
+2021-10-22 16:11:49,409 - root - INFO - New answer!!! 4
+2021-10-22 16:11:49,409 - root - INFO - Checked.
+2021-10-22 16:11:49,409 - root - INFO - ------------------------------------------------
+2021-10-22 16:11:49,409 - root - INFO - "b" has been passed to NFA for reading
+2021-10-22 16:11:49,409 - root - INFO - the Line wasn't read
+2021-10-22 16:11:49,409 - root - INFO - ------------------------------------------------
+2021-10-22 16:11:49,409 - root - INFO - "ba" has been passed to NFA for reading
+2021-10-22 16:11:49,409 - root - INFO - the Line wasn't read
+2021-10-22 16:11:49,409 - root - INFO - ------------------------------------------------
+2021-10-22 16:11:49,409 - root - INFO - "baa" has been passed to NFA for reading
+2021-10-22 16:11:49,409 - root - INFO - the Line wasn't read
+2021-10-22 16:11:49,409 - root - INFO - ------------------------------------------------
+2021-10-22 16:11:49,409 - root - INFO - "a" has been passed to NFA for reading
+2021-10-22 16:11:49,409 - root - INFO - the Line was read!
+2021-10-22 16:11:49,409 - root - INFO - Checking the length of substring
+2021-10-22 16:11:49,409 - root - INFO - Checked.
+2021-10-22 16:11:49,410 - root - INFO - ------------------------------------------------
+2021-10-22 16:11:49,410 - root - INFO - "aa" has been passed to NFA for reading
+2021-10-22 16:11:49,410 - root - INFO - the Line wasn't read
+2021-10-22 16:11:49,410 - root - INFO - ------------------------------------------------
+2021-10-22 16:11:49,410 - root - INFO - "a" has been passed to NFA for reading
+2021-10-22 16:11:49,410 - root - INFO - the Line was read!
+2021-10-22 16:11:49,410 - root - INFO - Checking the length of substring
+2021-10-22 16:11:49,410 - root - INFO - Checked.
+2021-10-22 16:11:49,410 - root - INFO - Exiting from "solve"
+```
+![](practice1/doc/6.png)
 
 ## Результаты тестирования
 

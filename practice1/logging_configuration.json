@@ -10,14 +10,14 @@
   "handlers": {
     "file_handler": {
       "class": "logging.FileHandler",
-  "level": "DEBUG",
+  "level": "INFO",
   "formatter": "simple",
   "filename": "./logs/logs.log",
   "encoding": "utf8"
   }
   },
   "root": {
-    "level": "DEBUG",
+    "level": "INFO",
   "handlers": ["file_handler"]
   }
 }
