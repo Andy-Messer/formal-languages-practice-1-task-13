@@ -12,8 +12,8 @@
 # Copyright (c)2021 Andrey Krotov. All rights reserved.
 __all__ = ['nfa', 'solve', 'dump']
 __author__ = "Krotov Andrey <krotov.ai@phystech.edu>"
-__version__ = "0.1"
-__date__ = "18 October 2021"
+__version__ = "1.1"
+__date__ = "9 December 2021"
 
 import logging
 import io
